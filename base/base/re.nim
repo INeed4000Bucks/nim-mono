@@ -62,7 +62,7 @@ test "replace":
   check:
     "abcd".replace(re"[bc]", "_") == "a__d"
     "abcd".replace(re"a([bc]+)", (match) => match.to_upper) == "BCd"
-    "abcde".replace(re"a(.)c(.)", (m1, m2) => @[m1, m2].map(to_upper).join("")) == "BDe"
+    "abcde".replace(re"a(.)c(.)", (m1, m2) => @[m1, m2].map((s: string) => s.to_upper).join("")) == "BDe"
 
 
 
